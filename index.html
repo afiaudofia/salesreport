@@ -13,22 +13,51 @@
     <title>Sales Report Dashboard</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="js/script.js"></script>
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet" />
+    <link
+      href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">DairyCompany</a>
-      <input
-        class="form-control form-control-dark w-100"
-        type="text"
-        placeholder="Search"
-        aria-label="Search"
-      />
+    <script>
+      // $(document).ready(function() {
+      //   $("#salestable").DataTable({
+      //     "responsive": true,
+
+      //   });
+
+      //   $('input[name="daterange"]').daterangepicker(
+      //     {
+      //       opens: "left"
+      //     },
+
+      //   );
+      // });
+    </script>
+
+    <nav
+      class="navbar navbar-dark fixed-top bg-success flex-md-nowrap p-0 shadow"
+    >
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">e`Store</a>
+
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
           <a class="nav-link" href="#">Sign out</a>
@@ -62,453 +91,1339 @@
                   <span data-feather="bar-chart-2"></span> Reports
                 </a>
               </li>
-              
             </ul>
           </div>
         </nav>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3"
-          >
-            <h1 class="h2 lead">Dashboard</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              
-              <div class="btn-group mr-2">
-              <div class="input-daterange input-group" id="datepicker">
-                  <input type="text" class="form-control" value="2012-04-05">
-                  <div class="input-group-addon">to</div>
-                  <input type="text" class="form-control" value="2012-04-19">
-              </div>
-              </div>
-            </div>
-          </div>
-
+        <main role="main" class="col-md-9 mt-4 ml-sm-auto col-lg-10 px-4">
           <div class="row">
-            <div class="col-sm-9">
+            <div class="col-sm-4">
               <div class="card">
+                <h1 class="lead">Today's Sales</h1>
+                <div class="btn-group justify-content-end">
+                    <button
+                      class="btn btn-secondary btn-sm dropdown-toggle"
+                      type="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Today
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Today</a>
+                      <a class="dropdown-item" href="#">This Week</a>
+                      <a class="dropdown-item" href="#">This Month</a>
+                      <a class="dropdown-item" href="#">This Year</a>
+                    </div>
+                  </div>
+                <small>$5,000.00</small>
                 <canvas
                   class="my-4 w-100"
                   id="myChart"
-                  width="900"
-                  height="200"
+                  width="500"
+                  height="280"
                 ></canvas>
               </div>
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-4">
+              <div class="card">
+                <h1 class="lead">
+                  Sales percentage
+                  <div class="btn-group justify-content-end">
+                    <button
+                      class="btn btn-secondary btn-sm dropdown-toggle"
+                      type="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Today
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Today</a>
+                      <a class="dropdown-item" href="#">This Week</a>
+                      <a class="dropdown-item" href="#">This Month</a>
+                      <a class="dropdown-item" href="#">This Year</a>
+                    </div>
+                  </div>
+                </h1>
+                <small>$5,000.00</small>
+                <div class="salesratio">
+                  <div class="item">
+                    <div>Borden</div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 70%;"
+                        aria-valuenow="70"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        70%
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div>Organic Valley</div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 70%;"
+                        aria-valuenow="70"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        70%
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div>Horizon</div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 70%;"
+                        aria-valuenow="70"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        70%
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div>Dairyland</div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 70%;"
+                        aria-valuenow="70"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        70%
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div>Whole Foods</div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-warning"
+                        role="progressbar"
+                        style="width: 45%;"
+                        aria-valuenow="45"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        45%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
               <div class="card">
                 <canvas
                   class="my-4 w-100"
                   id="salesChart"
                   width="300"
-                  height="200"
+                  height="230"
                 ></canvas>
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-sm-12 mt-4">
+              <div class="card ">
+                <div
+                  class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3"
+                >
+                  <h2 class="lead">Weekly Sales</h2>
+                  <div class="btn-toolbar mb-2 mb-md-0">
+                    <button id="hideratio" class="btn btn-secondary mr-2"><i class="material-icons"> visibility </i> Hide ratio</button>
+                    <div
+                      class="input-daterange input-group input-group-sm"
+                      id="datepicker"
+                    >
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">
+                          <i class="material-icons"> date_range </i></span
+                        >
+                      </div>
+                      <input
+                        type="text"
+                        name="daterange"
+                        class="form-control"
+                        value="04-10-2018 - 12-12-2018"
+                        placeholder="04/10/2018 - 12/12/2018"
+                      />
+                    </div>
+                  </div>
+                </div>
 
-          <h2 class="lead">Weekly Sales</h2>
-          <div class="table-responsive">
-            <table class="table table-md" id="salestable">
-              <thead>
-                <tr>
-                  <th>Products</th>
-                  <th>Monday</th>
-                  <th>Tuesday</th>
-                  <th>Wednesday</th>
-                  <th>Thursday</th>
-                  <th>Friday</th>
-                  <th>Saturday</th>
-                  <th>Sunday</th>
-                  <th>Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Borden</td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$8,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,500
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$4,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$3,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Organic Valley</td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$8,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,500
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$4,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$3,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Horizon</td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$8,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,500
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$4,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$3,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Dairy land</td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$8,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,500
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$4,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$3,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Whole Foods</td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$8,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,500
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$4,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$3,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Dean Foods</td>
-                  <td>$10,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$8,000
-                      <div class="progress">
-                          <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                        </div>
-                  </td>
-                  <td>$9,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,500<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$4,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$3,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$10,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                </tr>
-                <tr>
-                  <td>Hood</td>
-                  <td>$10,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$8,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,500<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$4,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$3,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$10,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                </tr>
-                <tr>
-                  <td>Amul</td>
-                  <td>$10,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$8,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,500<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$4,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$3,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$10,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                </tr>
-                <tr>
-                  <td>Promised Land</td>
-                  <td>$10,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$8,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,500<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$4,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$3,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$10,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                </tr>
-                <tr>
-                  <td>Stonyfield Farm</td>
-                  <td>$10,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$8,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$9,500<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$4,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$3,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                  <td>$10,000<div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div></td>
-                </tr>
-              </tbody>
-              <tfoot>
-                  <tr>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td></td>
-                      <td>$100,000</td>
-                    </tr>
-              </tfoot>
-            </table>
+                <div class="table-responsive">
+                  <table class="table table-md" id="salestable">
+                    <thead>
+                      <tr>
+                        <th>Products</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Borden</td>
+                        <td>
+                          $2,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar bg-warning"
+                              role="progressbar"
+                              style="width: 40%;"
+                              aria-valuenow="40"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              40%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>$10,000</td>
+                      </tr>
+                      <tr>
+                        <td>Organic Valley</td>
+                        <td>
+                          $10,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+
+                        <td>$10,000</td>
+                      </tr>
+                      <tr>
+                        <td>Horizon</td>
+                        <td>
+                          $10,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>$10,000</td>
+                      </tr>
+                      <tr>
+                        <td>Dairy land</td>
+                        <td>
+                          $10,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>$10,000</td>
+                      </tr>
+                      <tr>
+                        <td>Whole Foods</td>
+                        <td>
+                          $10,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>$10,000</td>
+                      </tr>
+                      <tr>
+                        <td>Dean Foods</td>
+                        <td>
+                          $10,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>$10,000</td>
+                      </tr>
+                      <tr>
+                        <td>Hood</td>
+                        <td>
+                          $10,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>$10,000</td>
+                      </tr>
+                      <tr>
+                        <td>Amul</td>
+                        <td>
+                          $10,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>$10,000</td>
+                      </tr>
+                      <tr>
+                        <td>Promised Land</td>
+                        <td>
+                          $10,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>$10,000</td>
+                      </tr>
+                      <tr>
+                        <td>Stonyfield Farm</td>
+                        <td>
+                          $10,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $8,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $9,500
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $4,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          $3,000
+                          <div class="progress">
+                            <div
+                              class="progress-bar"
+                              role="progressbar"
+                              style="width: 90%;"
+                              aria-valuenow="90"
+                              aria-valuemin="0"
+                              aria-valuemax="100"
+                            >
+                              25%
+                            </div>
+                          </div>
+                        </td>
+                        <td>$10,000</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>$100,000</td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </div>
     </div>
-
-    <!--
-      Bootstrap core JavaScript
-      ==================================================
-    -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
     ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
       integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -528,36 +1443,44 @@
 
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-    
+
     <script>
       $(document).ready(function() {
-          $("#saletable").DataTable();
+        $("#salestable").DataTable({
+          responsive: true,
+          searching: false,
+          paging: true,
+          info: false,
+          lengthChange: false
         });
 
-       
+        $('input[name="daterange"]').daterangepicker({
+          opens: "left"
+        });
 
+        $('#hideratio').click(function() {
+          $('#ratio').toggleClass('hide') ;
+          $('td div.progress').toggleClass('hide') ;
+        })
+      });
+    </script>
+
+    <script>
+      
       var ctx = document.getElementById("myChart").getContext("2d");
       var ctl = document.getElementById("salesChart").getContext("2d");
       var myChart = new Chart(ctx, {
         type: "line",
         data: {
-          labels: [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
+          labels: ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"],
           datasets: [
             {
-              data: [1009, 5000, 3000, 8000, 10000, ,],
+              data: [1009, 2000, 3000, 5000, 3000, 4000, 4000],
               lineTension: 0,
               backgroundColor: "transparent",
-              borderColor: "#007bff",
+              borderColor: "#3BD364",
               borderWidth: 1,
-              pointBackgroundColor: "#007bff"
+              pointBackgroundColor: "#3BD364"
             }
           ]
         },
@@ -592,37 +1515,23 @@
             "Organic Valley",
             "Horizon",
             "Dairy land",
-            "Whole Foods",
-            "Dean foods",
-            "Hood",
-            "Amul",
-            "Promised Land",
-            "Stony Field"
+            "Whole Foods"
           ],
           datasets: [
             {
-              data: [1009, 5000, 3000, 8000, 10000, ,],
+              data: [5000, 4500, 3000, 2500, 1500, ,],
               lineTension: 0,
-              borderWidth: 1,
+              borderWidth: 2,
               backgroundColor: [
-                "rgba(255, 99, 132, 0.9)",
-                "rgba(54, 162, 235, 0.9)",
-                "rgba(255, 206, 86, 0.9)",
-                "rgba(75, 192, 192, 0.9)",
-                "rgba(153, 102, 255, 0.9)",
-                "rgba(255, 159, 64, 0.9)"
-              ],
-              pointBackgroundColor: "#007bff"
+                "#3A8181",
+                "#4BA0A0",
+                "#76E3E3",
+                "#8DF5F5",
+                "#D0FFFF"
+              ]
             }
           ],
-          borderColor: [
-            "rgba(255,99,132,1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)"
-          ]
+          borderColor: ["#3A8181", "#4BA0A0", "#76E3E3", "#8DF5F5", "#D0FFFF"]
         },
         options: {
           scales: {
@@ -644,7 +1553,14 @@
             ]
           },
           legend: {
-            display: false
+            display: true,
+            position: "right",
+            responsive: false,
+            labels: {
+              usePointStyle: false, 
+              boxWidth: 15,
+              padding: 20
+            }
           }
         }
       });

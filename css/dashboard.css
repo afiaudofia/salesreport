@@ -1,19 +1,56 @@
 body {
-  font-size: .875rem;
-  background: #faf9f9;
+  font-size: .8rem;
+  background: #FAF9FA;
+  font-family: 'Open Sans', sans-serif;
 }
-
+select {
+  font-size: 12px;
+}
+.lead {
+  font-size: 16px;
+}
+.btn-secondary {
+  background: #fff;
+  color: #333;
+  font-size: 11px;
+}
+.progress {
+  display: -ms-flexbox;
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: .75rem;
+  background-color: #3BD364;
+  border-radius: 0;
+}
+.progress-bar {
+  background: #3A8181;
+}
 .feather {
   width: 16px;
   height: 16px;
   vertical-align: text-bottom;
 }
-
+.salesratio .item {
+  margin-bottom: 10px;
+}
 /*
  * Sidebar
  */
 .card {
-  border: 1px solid #eee;
+  border: none;
+  background: #ffffff;
+  padding: 15px;
+  transition: 0.5s;
+}
+.card:hover {
+  box-shadow: 0 0 20px 0px #cccccc;
+}
+ .material-icons {
+   font-size: 14px;
+ }
+.hide {
+  display: none;
 }
 .sidebar {
   position: fixed;
